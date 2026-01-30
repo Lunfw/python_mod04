@@ -11,8 +11,7 @@ def secure_vault(filename: str) -> bool:
             print('Vault connection established with failsafe procotols\n')
             print('SECURE EXTRACTION:')
             reader = file.read()
-            print('[CLASSIFIED] Quantum encryption keys recovered')
-            print('[CLASSIFIED] Archive integrity: 100%\n')
+            print(reader)
             with open('preserved.txt', 'a') as dup:
                 print('SECURE PRESERVATION:')
                 dup.write(reader)

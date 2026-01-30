@@ -22,10 +22,10 @@ def create_write(filename: str) -> tuple:
             print(file.read())
     except FileNotFoundError:
         print(f'# Failed to write to fragment {filename} -> Does not exist')
-        yield (False, filename)
+        return (False, filename)
     finally:
         file.close()
-    yield (True, filename)
+    return (True, filename)
 
 
 def main() -> None:
@@ -33,7 +33,7 @@ def main() -> None:
         #   Small main program.
     '''
     print('=== CYBER ARCHIVES - PRESERVATION SYSTEM ===\n')
-    temp: tuple = tuple(create_write('new_discovery.txt'))
+    temp: tuple = create_write('new_discovery.txt')
     if (temp[0]):
         print('Data inscription complete. Storage unit sealed.')
         print(f"Archive '{temp[1]}' ready for long-term preservation.")
