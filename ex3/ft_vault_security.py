@@ -1,4 +1,4 @@
-from sys import stdout, exit
+from sys import exit
 
 
 def secure_vault(filename: str) -> bool:
